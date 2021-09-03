@@ -1,6 +1,6 @@
 
-import {setTimer} from '.././index.js'
+// import {setTimer} from '.././index.js'
 
-test('timer should countdown properly', ()=>{
+// test('timer should countdown properly', ()=>{
     
-})
+// })
