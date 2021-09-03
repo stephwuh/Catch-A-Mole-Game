@@ -1,0 +1,36 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+#moles{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 300px;
+    align-items: center;
+}
+.mole{
+    width: 50px;
+    height: 50px;
+    font-size: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: solid 1px red;
+}
+.two{
+    display: flex;
+}
+.four{
+    display: flex;
+}
+.six{
+    display: flex;
+}
+
+#start{
+    width: 100px;
+}
