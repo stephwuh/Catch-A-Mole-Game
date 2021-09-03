@@ -2,7 +2,11 @@ const startButton = document.querySelector("#start");
 
 const time = document.querySelector("#time");
 
+const scoreDisplay = document.querySelector('#score');
+
 let countDownTime = 20;
+
+let score = 0;
 
 const setTimer = (e) => {
 
@@ -28,7 +32,85 @@ const setTimer = (e) => {
     mole3.innerHTML = 'o'
     mole4.innerHTML = 'o'
     mole5.innerHTML = 'o'
-  
+
+    
+    // mole1.onclick = function(){
+    //   mole1.innerHTML = 'x'
+    //   score++
+    //   console.log(score)
+    // }
+    // mole2.onclick = function(){
+    //   mole2.innerHTML = 'x'
+    //   score++
+    //   console.log(score)
+    // }
+    // mole3.onclick = function(){
+    //   mole3.innerHTML = 'x'
+    //   score++
+    //   console.log(score)
+    // }
+    // mole4.onclick = function(){
+    //   mole4.innerHTML = 'x'
+    //   score++
+    //   console.log(score)
+    // }
+    // mole5.onclick = function(){
+    //   mole5.innerHTML = 'x'
+    //   score++
+    //   console.log(score)
+    // }
+
+    const mole1AddScore = () => {
+      mole1.innerHTML = 'x'
+      score++
+      mole1.removeEventListener('click', mole1AddScore)
+      console.log(score)
+      scoreDisplay.innerHTML = `${score}`;
+    }
+    
+    mole1.addEventListener('click', mole1AddScore)
+    
+    const mole2AddScore = () => {
+      mole2.innerHTML = 'x'
+      score++
+      mole2.removeEventListener('click', mole2AddScore)
+      console.log(score)
+      scoreDisplay.innerHTML = `${score}`;
+    }
+    
+    mole2.addEventListener('click', mole2AddScore)
+
+    const mole3AddScore = () => {
+      mole3.innerHTML = 'x'
+      score++
+      mole3.removeEventListener('click', mole3AddScore)
+      console.log(score)
+      scoreDisplay.innerHTML = `${score}`;
+    }
+    
+    mole3.addEventListener('click', mole3AddScore)
+
+    const mole4AddScore = () => {
+      mole4.innerHTML = 'x'
+      score++
+      mole4.removeEventListener('click', mole4AddScore)
+      console.log(score)
+      scoreDisplay.innerHTML = `${score}`;
+    }
+    
+    mole4.addEventListener('click', mole4AddScore)
+
+    const mole5AddScore = () => {
+      mole5.innerHTML = 'x'
+      score++
+      mole5.removeEventListener('click', mole5AddScore)
+      console.log(score)
+      scoreDisplay.innerHTML = `${score}`;
+    }
+    
+    mole5.addEventListener('click', mole5AddScore)
+    
+
     setTimeout(()=>{
       mole1.innerHTML = 'x'
       mole2.innerHTML = 'x'
@@ -53,11 +135,9 @@ const setTimer = (e) => {
 
 startButton.addEventListener("click", setTimer);
 
+// scoreDisplay.innerHTML = `${score}`;
 
   
-
-
-
 
 
 
