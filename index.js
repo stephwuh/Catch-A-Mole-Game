@@ -1,3 +1,6 @@
+
+
+
 const startButton = document.querySelector("#start");
 const time = document.querySelector("#time");
 const scoreDisplay = document.querySelector("#score");
@@ -18,11 +21,14 @@ if (sessionStorage.getItem("time")) {
   
 
   const moleTimer = setInterval(() => {
-    const moleSelector1 = Math.floor(Math.random() * 23 + 1);
-    const moleSelector2 = Math.floor(Math.random() * 23 + 1);
-    const moleSelector3 = Math.floor(Math.random() * 23 + 1);
-    const moleSelector4 = Math.floor(Math.random() * 23 + 1);
-    const moleSelector5 = Math.floor(Math.random() * 23 + 1);
+
+    const numOfMoles = Math.floor(Math.random() * 5 + 1);
+
+    const moleSelector1 = Math.floor(Math.random() * 24 + 1);
+    const moleSelector2 = Math.floor(Math.random() * 24 + 1);
+    const moleSelector3 = Math.floor(Math.random() * 24 + 1);
+    const moleSelector4 = Math.floor(Math.random() * 24 + 1);
+    const moleSelector5 = Math.floor(Math.random() * 24 + 1);
 
     const mole1 = document.querySelector(`#mole${moleSelector1}`);
     const mole2 = document.querySelector(`#mole${moleSelector2}`);
@@ -30,11 +36,33 @@ if (sessionStorage.getItem("time")) {
     const mole4 = document.querySelector(`#mole${moleSelector4}`);
     const mole5 = document.querySelector(`#mole${moleSelector5}`);
 
-    mole1.innerHTML = "o";
-    mole2.innerHTML = "o";
-    mole3.innerHTML = "o";
-    mole4.innerHTML = "o";
-    mole5.innerHTML = "o";
+    switch (numOfMoles){
+      case 1:
+        mole1.innerHTML = "o";;
+        break;
+      case 2:
+        mole1.innerHTML = "o";
+        mole2.innerHTML = "o";
+        break;
+      case 3:
+        mole1.innerHTML = "o";
+        mole2.innerHTML = "o";
+        mole3.innerHTML = "o";
+        break;
+      case 4:
+        mole1.innerHTML = "o";
+        mole2.innerHTML = "o";
+        mole3.innerHTML = "o";
+        mole4.innerHTML = "o";
+        break;
+      case 5:
+        mole1.innerHTML = "o";
+        mole2.innerHTML = "o";
+        mole3.innerHTML = "o";
+        mole4.innerHTML = "o";
+        mole5.innerHTML = "o";
+        break; 
+    }
 
     const mole1AddScore = () => {
       if(mole1.innerHTML === 'o'){
@@ -117,8 +145,6 @@ if (sessionStorage.getItem("time")) {
     sessionStorage.setItem("time", time.innerHTML);
     sessionStorage.setItem("score", scoreDisplay.innerHTML);
 
-    console.log(sessionStorage);
-
     if (countDownTime <= 0) {
       clearInterval(countDown);
       clearInterval(moleTimer);
@@ -127,7 +153,6 @@ if (sessionStorage.getItem("time")) {
       sessionStorage.removeItem("time");
       sessionStorage.removeItem("score");
 
-      console.log(sessionStorage);
     }
   }, 1000);
 }
@@ -144,11 +169,14 @@ const setTimer = (e) => {
   startButton.setAttribute("disabled", "true");
 
   const moleTimer = setInterval(() => {
-    const moleSelector1 = Math.floor(Math.random() * 23 + 1);
-    const moleSelector2 = Math.floor(Math.random() * 23 + 1);
-    const moleSelector3 = Math.floor(Math.random() * 23 + 1);
-    const moleSelector4 = Math.floor(Math.random() * 23 + 1);
-    const moleSelector5 = Math.floor(Math.random() * 23 + 1);
+
+    const numOfMoles = Math.floor(Math.random() * 5 + 1);
+
+    const moleSelector1 = Math.floor(Math.random() * 24 + 1);
+    const moleSelector2 = Math.floor(Math.random() * 24 + 1);
+    const moleSelector3 = Math.floor(Math.random() * 24 + 1);
+    const moleSelector4 = Math.floor(Math.random() * 24 + 1);
+    const moleSelector5 = Math.floor(Math.random() * 24 + 1);
 
     const mole1 = document.querySelector(`#mole${moleSelector1}`);
     const mole2 = document.querySelector(`#mole${moleSelector2}`);
@@ -156,11 +184,35 @@ const setTimer = (e) => {
     const mole4 = document.querySelector(`#mole${moleSelector4}`);
     const mole5 = document.querySelector(`#mole${moleSelector5}`);
 
-    mole1.innerHTML = "o";
-    mole2.innerHTML = "o";
-    mole3.innerHTML = "o";
-    mole4.innerHTML = "o";
-    mole5.innerHTML = "o";
+    switch (numOfMoles){
+      case 1:
+        mole1.innerHTML = "o";;
+        break;
+      case 2:
+        mole1.innerHTML = "o";
+        mole2.innerHTML = "o";
+        break;
+      case 3:
+        mole1.innerHTML = "o";
+        mole2.innerHTML = "o";
+        mole3.innerHTML = "o";
+        break;
+      case 4:
+        mole1.innerHTML = "o";
+        mole2.innerHTML = "o";
+        mole3.innerHTML = "o";
+        mole4.innerHTML = "o";
+        break;
+      case 5:
+        mole1.innerHTML = "o";
+        mole2.innerHTML = "o";
+        mole3.innerHTML = "o";
+        mole4.innerHTML = "o";
+        mole5.innerHTML = "o";
+        break; 
+    }
+
+  
 
     const mole1AddScore = () => {
       if(mole1.innerHTML === 'o'){
@@ -252,7 +304,6 @@ const setTimer = (e) => {
       sessionStorage.removeItem("time");
       sessionStorage.removeItem("score");
 
-      console.log(sessionStorage);
     }
   }, 1000);
 };
