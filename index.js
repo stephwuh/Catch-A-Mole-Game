@@ -6,7 +6,6 @@ const scoreDisplay = document.querySelector("#score");
 
 if (sessionStorage.getItem("time")) {
 
-  console.log(sessionStorage)
 
   startButton.setAttribute("disabled", "true");
 
@@ -38,54 +37,61 @@ if (sessionStorage.getItem("time")) {
     mole5.innerHTML = "o";
 
     const mole1AddScore = () => {
-      mole1.innerHTML = "x";
-      score++;
-      mole1.removeEventListener("click", mole1AddScore);
-      // console.log(score)
-      scoreDisplay.innerHTML = `${score}`;
+      if(mole1.innerHTML === 'o'){
+        mole1.innerHTML = "";
+        score++;
+        scoreDisplay.innerHTML = `${score}`;
+      }
     };
 
     mole1.addEventListener("click", mole1AddScore);
+    
 
     const mole2AddScore = () => {
-      mole2.innerHTML = "x";
-      score++;
-      mole2.removeEventListener("click", mole2AddScore);
-      // console.log(score)
-      scoreDisplay.innerHTML = `${score}`;
+      if(mole2.innerHTML === 'o'){
+        mole2.innerHTML = "";
+        score++;      
+        scoreDisplay.innerHTML = `${score}`;
+      }
     };
 
     mole2.addEventListener("click", mole2AddScore);
+    
 
     const mole3AddScore = () => {
-      mole3.innerHTML = "x";
-      score++;
-      mole3.removeEventListener("click", mole3AddScore);
-      // console.log(score)
-      scoreDisplay.innerHTML = `${score}`;
+      if(mole3.innerHTML === 'o'){
+        mole3.innerHTML = "";
+        score++;
+        scoreDisplay.innerHTML = `${score}`;
+      }
     };
 
     mole3.addEventListener("click", mole3AddScore);
+    
 
     const mole4AddScore = () => {
-      mole4.innerHTML = "x";
-      score++;
-      mole4.removeEventListener("click", mole4AddScore);
-      // console.log(score)
-      scoreDisplay.innerHTML = `${score}`;
+      if(mole4.innerHTML === 'o'){
+        mole4.innerHTML = "";
+        score++;
+        scoreDisplay.innerHTML = `${score}`;
+        
+      }
+     
     };
 
     mole4.addEventListener("click", mole4AddScore);
+    
 
     const mole5AddScore = () => {
-      mole5.innerHTML = "x";
-      score++;
-      mole5.removeEventListener("click", mole5AddScore);
-      // console.log(score)
-      scoreDisplay.innerHTML = `${score}`;
+      if(mole5.innerHTML === 'o'){
+        mole5.innerHTML = "";
+        score++;
+        scoreDisplay.innerHTML = `${score}`;
+      }
     };
 
     mole5.addEventListener("click", mole5AddScore);
+    
 
     setTimeout(() => {
       mole1.innerHTML = "x";
@@ -93,6 +99,13 @@ if (sessionStorage.getItem("time")) {
       mole3.innerHTML = "x";
       mole4.innerHTML = "x";
       mole5.innerHTML = "x";
+
+      mole1.removeEventListener("click", mole1AddScore)
+      mole2.removeEventListener("click", mole2AddScore)
+      mole3.removeEventListener("click", mole3AddScore)
+      mole4.removeEventListener("click", mole4AddScore)
+      mole5.removeEventListener("click", mole5AddScore)
+
     }, 2000);
   }, 2000);
 
@@ -120,18 +133,15 @@ if (sessionStorage.getItem("time")) {
 }
 
 
-
-
-
 const setTimer = (e) => {
 
-  let countDownTime = 30;
+  let countDownTime = 60;
   let score = 0;
 
-  startButton.setAttribute("disabled", "true");
-
-  time.innerHTML = 30
+  time.innerHTML = 60
   scoreDisplay.innerHTML = 0
+
+  startButton.setAttribute("disabled", "true");
 
   const moleTimer = setInterval(() => {
     const moleSelector1 = Math.floor(Math.random() * 23 + 1);
@@ -153,54 +163,61 @@ const setTimer = (e) => {
     mole5.innerHTML = "o";
 
     const mole1AddScore = () => {
-      mole1.innerHTML = "x";
-      score++;
-      mole1.removeEventListener("click", mole1AddScore);
-      // console.log(score)
-      scoreDisplay.innerHTML = `${score}`;
+      if(mole1.innerHTML === 'o'){
+        mole1.innerHTML = "";
+        score++;
+        scoreDisplay.innerHTML = `${score}`;
+      }
     };
 
     mole1.addEventListener("click", mole1AddScore);
+    
 
     const mole2AddScore = () => {
-      mole2.innerHTML = "x";
-      score++;
-      mole2.removeEventListener("click", mole2AddScore);
-      // console.log(score)
-      scoreDisplay.innerHTML = `${score}`;
+      if(mole2.innerHTML === 'o'){
+        mole2.innerHTML = "";
+        score++;      
+        scoreDisplay.innerHTML = `${score}`;
+      }
     };
 
     mole2.addEventListener("click", mole2AddScore);
+    
 
     const mole3AddScore = () => {
-      mole3.innerHTML = "x";
-      score++;
-      mole3.removeEventListener("click", mole3AddScore);
-      // console.log(score)
-      scoreDisplay.innerHTML = `${score}`;
+      if(mole3.innerHTML === 'o'){
+        mole3.innerHTML = "";
+        score++;
+        scoreDisplay.innerHTML = `${score}`;
+      }
     };
 
     mole3.addEventListener("click", mole3AddScore);
+    
 
     const mole4AddScore = () => {
-      mole4.innerHTML = "x";
-      score++;
-      mole4.removeEventListener("click", mole4AddScore);
-      // console.log(score)
-      scoreDisplay.innerHTML = `${score}`;
+      if(mole4.innerHTML === 'o'){
+        mole4.innerHTML = "";
+        score++;
+        scoreDisplay.innerHTML = `${score}`;
+        
+      }
+     
     };
 
     mole4.addEventListener("click", mole4AddScore);
+    
 
     const mole5AddScore = () => {
-      mole5.innerHTML = "x";
-      score++;
-      mole5.removeEventListener("click", mole5AddScore);
-      // console.log(score)
-      scoreDisplay.innerHTML = `${score}`;
+      if(mole5.innerHTML === 'o'){
+        mole5.innerHTML = "";
+        score++;
+        scoreDisplay.innerHTML = `${score}`;
+      }
     };
 
     mole5.addEventListener("click", mole5AddScore);
+    
 
     setTimeout(() => {
       mole1.innerHTML = "x";
@@ -208,7 +225,15 @@ const setTimer = (e) => {
       mole3.innerHTML = "x";
       mole4.innerHTML = "x";
       mole5.innerHTML = "x";
+
+      mole1.removeEventListener("click", mole1AddScore)
+      mole2.removeEventListener("click", mole2AddScore)
+      mole3.removeEventListener("click", mole3AddScore)
+      mole4.removeEventListener("click", mole4AddScore)
+      mole5.removeEventListener("click", mole5AddScore)
+
     }, 2000);
+
   }, 2000);
 
   const countDown = setInterval(() => {
@@ -218,8 +243,6 @@ const setTimer = (e) => {
 
     sessionStorage.setItem("time", time.innerHTML);
     sessionStorage.setItem("score", scoreDisplay.innerHTML);
-
-    console.log(sessionStorage);
 
     if (countDownTime <= 0) {
       clearInterval(countDown);
@@ -236,12 +259,4 @@ const setTimer = (e) => {
 
 startButton.addEventListener("click", setTimer);
 
-// to persist score, game time, and timer info when browser is refreshed
 
-// time.addEventListener('change', function(){
-//   sessionStorage.setItem('time', time.innerHTML)
-// })
-
-// scoreDisplay.addEventListener('change', function(){
-//   sessionStorage.setItem('score', scoreDisplay.innerHTML)
-// })
