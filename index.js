@@ -8,9 +8,16 @@ const startGame = () => {
 
   let isRefreshed = false;
 
+  //Checks whether or not the browser has been refreshed.
+
   if (sessionStorage.getItem("time")) {
     isRefreshed = true;
   }
+
+  /*
+  If the browser was refreshed, time and score information is retrieved from session storage.
+  Otherwise, time and score start at 60 seconds and 0 points respectively.
+  */
 
   let countDownTime = isRefreshed ? sessionStorage.getItem("time") : 60;
   let score = isRefreshed ? sessionStorage.getItem("score") : 0;
@@ -18,10 +25,14 @@ const startGame = () => {
   time.innerHTML = countDownTime;
   scoreDisplay.innerHTML = score;
 
+  //Start button is disabled once the game starts.
+
   startButton.setAttribute("disabled", "true");
 
-  // 'moleTimer' sets the interval for moles to appear and disappear every 2 seconds.
-
+  /* 
+  'moleTimer' sets the interval for moles to appear and disappear every 2 seconds.
+  I modularize the setInterval function, to make it easier to test in the future.
+  */
   const moleTimer = setInterval(moleTimerFunc(score, scoreDisplay), 2000);
 
 
@@ -41,6 +52,12 @@ const startGame = () => {
 
     sessionStorage.setItem("time", time.innerHTML);
     sessionStorage.setItem("score", scoreDisplay.innerHTML);
+
+    /*
+    once countdown time hits 0, setIntervals in progress are cleared, 
+    start button is reactivated, and time and score information is cleared from session storage
+    so the program does not think the browser has been refreshed. 
+    */
 
     if (countDownTime <= 0) {
 
