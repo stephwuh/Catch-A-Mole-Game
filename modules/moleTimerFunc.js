@@ -120,7 +120,7 @@ export const moleTimerFunc = (score, scoreDisplay) => {
         mole5.addEventListener("click", mole5AddScore);
         
         /*
-        Changes the 'o' (moles) back to the 'x' (mole house) and removes the event listeners.
+        Changes 'o' (mole) back to 'x' (mole house) and removes the event listeners.
         */
        
         setTimeout(() => {
