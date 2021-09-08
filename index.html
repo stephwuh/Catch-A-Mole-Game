@@ -1,57 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href='./index.css' rel='stylesheet'>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./index.css" rel="stylesheet" />
     <title>Catch-A-Mole Game</title>
-</head>
-<body>
-    <div>
-        <h3 id='score'>0</h3>
-        <h3 id='time'>60</h3>
+  </head>
+  <body>
+    <div id="game">
+      <div id="score-time-container">
+        <h3>점수 : <span id="score">0</span></h3>
+        <h3>시간 : <span id="time">0</span></h3>
+      </div>
+      <div id="moles">
+        <div class="two">
+          <div class="mole" id="mole1">x</div>
+          <div class="mole" id="mole2">x</div>
+        </div>
+        <div class="four">
+          <div class="mole" id="mole3">x</div>
+          <div class="mole" id="mole4">x</div>
+          <div class="mole" id="mole5">x</div>
+          <div class="mole" id="mole6">x</div>
+        </div>
+        <div class="six">
+          <div class="mole" id="mole7">x</div>
+          <div class="mole" id="mole8">x</div>
+          <div class="mole" id="mole9">x</div>
+          <div class="mole" id="mole10">x</div>
+          <div class="mole" id="mole11">x</div>
+          <div class="mole" id="mole12">x</div>
+        </div>
+        <div class="six">
+          <div class="mole" id="mole13">x</div>
+          <div class="mole" id="mole14">x</div>
+          <div class="mole" id="mole15">x</div>
+          <div class="mole" id="mole16">x</div>
+          <div class="mole" id="mole17">x</div>
+          <div class="mole" id="mole18">x</div>
+        </div>
+        <div class="four">
+          <div class="mole" id="mole19">x</div>
+          <div class="mole" id="mole20">x</div>
+          <div class="mole" id="mole21">x</div>
+          <div class="mole" id="mole22">x</div>
+        </div>
+        <div class="two">
+          <div class="mole" id="mole23">x</div>
+          <div class="mole" id="mole24">x</div>
+        </div>
+      </div>
+      <div id="button-container">
+      <button id="start">Start</button>
     </div>
-    <div id='moles'>
-        <div class='two'>
-            <div class='mole' id='mole1'>x</div>
-            <div class='mole' id='mole2'>x</div>
-        </div>
-        <div class='four'>
-            <div class='mole' id='mole3'>x</div>
-            <div class='mole' id='mole4'>x</div>
-            <div class='mole' id='mole5'>x</div>
-            <div class='mole' id='mole6'>x</div>
-        </div>
-        <div class='six'>
-            <div class='mole' id='mole7'>x</div>
-            <div class='mole' id='mole8'>x</div>
-            <div class='mole' id='mole9'>x</div>
-            <div class='mole' id='mole10'>x</div>
-            <div class='mole' id='mole11'>x</div>
-            <div class='mole' id='mole12'>x</div>
-        </div>
-        <div class='six'>
-            <div class='mole' id='mole13'>x</div>
-            <div class='mole' id='mole14'>x</div>
-            <div class='mole' id='mole15'>x</div>
-            <div class='mole' id='mole16'>x</div>
-            <div class='mole' id='mole17'>x</div>
-            <div class='mole' id='mole18'>x</div>
-        </div>
-        <div class='four'>
-            <div class='mole' id='mole19'>x</div>
-            <div class='mole' id='mole20'>x</div>
-            <div class='mole' id='mole21'>x</div>
-            <div class='mole' id='mole22'>x</div>
-        </div>
-        <div class='two'>
-            <div class='mole' id='mole23'>x</div>
-            <div class='mole' id='mole24'>x</div>
-        </div>
     </div>
-    <button id='start' >Start</button>
 
-    <script type="module" src='./index.js'></script>
-</body>
+    <script type="module" src="./index.js"></script>
+  </body>
 </html>

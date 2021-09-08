@@ -4,12 +4,41 @@
     margin: 0;
 }
 
+#game{
+
+    margin: auto;
+    width: 400px;
+}
+
+#score-time-container, #button-container{
+    display: flex;
+    justify-content: center;
+    border-top: 1px dashed black;
+    border-bottom: 1px dashed black;
+    margin: 1rem 0;
+    width: 100%;
+}
+
+#score-time-container > h3 {
+
+    width: 50%;
+    text-align: center;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    margin: 1rem 0;
+}
+
+#score, #time{
+    display: inline-block;
+    width: 1rem;
+}
+
 #moles{
     display: flex;
     justify-content: center;
     flex-direction: column;
     flex-wrap: wrap;
-    width: 300px;
+    width: 100%;
     align-items: center;
 }
 .mole{
@@ -19,7 +48,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border: solid 1px red;
 }
 .two{
     display: flex;
@@ -33,4 +61,10 @@
 
 #start{
     width: 100px;
+    background-color: transparent;
+    border-style: none;
+    margin: 1rem 0;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
 }
+
