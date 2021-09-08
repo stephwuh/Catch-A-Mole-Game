@@ -1,44 +1,19 @@
 import { moleTimerFunc } from "./modules/moleTimerFunc.js";
-import { countDownFunc} from "./modules/countDownFunc.js";
 
 const startButton = document.querySelector("#start");
 const time = document.querySelector("#time");
 const scoreDisplay = document.querySelector("#score");
 
-if (sessionStorage.getItem("time")) {
-  time.innerHTML = sessionStorage.getItem("time");
-  scoreDisplay.innerHTML = sessionStorage.getItem("score");
-
-  let countDownTime = time.innerHTML;
-  let score = scoreDisplay.innerHTML;
-
-  startButton.setAttribute("disabled", "true");
-
-  const moleTimer = setInterval(moleTimerFunc(score, scoreDisplay), 2000);
-
+const startGame = () => {
   
-  const countDown = setInterval(
-    countDownFunc(
-      countDownTime,
-      time,
-      startButton,
-      moleTimer,
-      scoreDisplay
-    ),
-    1000
-  );
+  let isRefreshed = false;
 
-  setTimeout(() => {
-    clearInterval(countDown)
-  }, countDownTime*1000);
+  if (sessionStorage.getItem("time")) {
+    isRefreshed = true;
+  }
 
-
-  
-}
-
-const setTimer = () => {
-  let countDownTime = 60;
-  let score = 0;
+  let countDownTime = isRefreshed ? sessionStorage.getItem("time") : 60;
+  let score = isRefreshed ? sessionStorage.getItem("score") : 0;
 
   time.innerHTML = countDownTime;
   scoreDisplay.innerHTML = score;
@@ -47,23 +22,31 @@ const setTimer = () => {
 
   const moleTimer = setInterval(moleTimerFunc(score, scoreDisplay), 2000);
 
-  const countDown = setInterval(
-    countDownFunc(
-      countDownTime,
-      time,
-      startButton,
-      moleTimer,
-      scoreDisplay
-    ),
-    1000
-  );
+  const countDown = setInterval(() => {
 
-    setTimeout(() => {
-      clearInterval(countDown)
-    }, countDownTime*1000);
+    countDownTime--;
 
+    time.innerHTML = `${countDownTime}`;
 
+    sessionStorage.setItem("time", time.innerHTML);
+    sessionStorage.setItem("score", scoreDisplay.innerHTML);
+
+    if (countDownTime <= 0) {
+
+      clearInterval(countDown);
+      clearInterval(moleTimer);
+
+      startButton.removeAttribute("disabled");
+
+      sessionStorage.removeItem("time");
+      sessionStorage.removeItem("score");
+    }
+  }, 1000);
 
 };
 
-startButton.addEventListener("click", setTimer);
+startButton.addEventListener("click", startGame);
+
+if (sessionStorage.getItem("time")) {
+  startGame();
+}
