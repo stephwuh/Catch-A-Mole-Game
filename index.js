@@ -5,7 +5,7 @@ const time = document.querySelector("#time");
 const scoreDisplay = document.querySelector("#score");
 
 const startGame = () => {
-  
+
   let isRefreshed = false;
 
   if (sessionStorage.getItem("time")) {
@@ -20,13 +20,24 @@ const startGame = () => {
 
   startButton.setAttribute("disabled", "true");
 
+  // 'moleTimer' sets the interval for moles to appear and disappear every 2 seconds.
+
   const moleTimer = setInterval(moleTimerFunc(score, scoreDisplay), 2000);
+
+
+  // 'countDown' sets the interval for the whole game
 
   const countDown = setInterval(() => {
 
     countDownTime--;
 
     time.innerHTML = `${countDownTime}`;
+
+
+    /* 
+    stores time and score information to session storage every second
+    so we can use it to persist the game after the browser has been refreshed.
+    */
 
     sessionStorage.setItem("time", time.innerHTML);
     sessionStorage.setItem("score", scoreDisplay.innerHTML);
@@ -46,6 +57,12 @@ const startGame = () => {
 };
 
 startButton.addEventListener("click", startGame);
+
+
+/* 
+checks whether or not the browser has been refreshed 
+based on the presence or absence of information in session storage
+*/
 
 if (sessionStorage.getItem("time")) {
   startGame();

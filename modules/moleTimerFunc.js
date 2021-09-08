@@ -2,8 +2,11 @@
 export const moleTimerFunc = (score, scoreDisplay) => {
 
     return function(){
-        
-        const numOfMoles = Math.floor(Math.random() * 5 + 1);  
+      
+        /* 
+        I first select 5 moles randomly out of 24 moles. 
+        I do the +1, so 0 doesn't show up 
+        */
 
         const moleSelector1 = Math.floor(Math.random() * 24 + 1);
         const moleSelector2 = Math.floor(Math.random() * 24 + 1);
@@ -16,7 +19,18 @@ export const moleTimerFunc = (score, scoreDisplay) => {
         const mole3 = document.querySelector(`#mole${moleSelector3}`);
         const mole4 = document.querySelector(`#mole${moleSelector4}`);
         const mole5 = document.querySelector(`#mole${moleSelector5}`);
+
+        /* 
+        Out of the 5 moles, I choose how many moles to appear during the interval.
+        Again, I do the +1 so 0 wont show up.
+        */
+
+        const numOfMoles = Math.floor(Math.random() * 5 + 1);  
     
+        /* 
+        I select the specific moles to appear based on the value of 'numOfMoles'
+        */
+
         switch (numOfMoles){
           case 1:
             mole1.innerHTML = "o";;
@@ -45,6 +59,11 @@ export const moleTimerFunc = (score, scoreDisplay) => {
             break; 
         }
     
+        /*
+        I then add eventlistners to the randomly chosen moles.
+        If the user clicks on it, the 'o' dissappears and then increments the score.
+        */
+
         const mole1AddScore = () => {
           if(mole1.innerHTML === 'o'){
             mole1.innerHTML = "";
@@ -100,7 +119,10 @@ export const moleTimerFunc = (score, scoreDisplay) => {
     
         mole5.addEventListener("click", mole5AddScore);
         
-    
+        /*
+        Changes the 'o' (moles) back to the 'x' (mole house) and removes the event listeners.
+        */
+       
         setTimeout(() => {
 
           mole1.innerHTML = "x";
