@@ -4,7 +4,7 @@ const startButton = document.querySelector("#start");
 const time = document.querySelector("#time");
 const scoreDisplay = document.querySelector("#score");
 
-const startGame = () => {
+export const startGame = () => {
 
   let isRefreshed = false;
 
