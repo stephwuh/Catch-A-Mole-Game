@@ -1,7 +1,7 @@
 
 # Catch-A-Mole-Game
 
-This is a classic Catch-A-Mole game where you catch the mole that pops out of its house. 
+This is a classic Catch-A-Mole game where you catch moles that pop out of their houses. 
 'x's represents the mole houses whereas the 'o's respresent the moles. Click on as many
 'o's as you can during 60 seconds.
 
